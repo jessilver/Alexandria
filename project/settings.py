@@ -22,6 +22,10 @@ MY_APPS = [
     'core',
 ]
 
+SEEDER_APPS = [
+    'core',
+]
+
 INSTALLED_APPS = [
     # Django apps
     'django.contrib.admin',
@@ -32,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third-party apps
+    'jessilver_django_seed',
     'django_dump_die', 
+    
     'whitenoise.runserver_nostatic', 
 ] + MY_APPS
 

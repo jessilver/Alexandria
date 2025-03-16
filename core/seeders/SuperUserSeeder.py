@@ -1,8 +1,7 @@
-from django.contrib.auth import get_user_model
+from jessilver_django_seed.seeders.BaseSeeder import BaseSeeder
 from django.contrib.auth.models import User
-from .BaseSeeder import BaseSeeder
 
-class Command(BaseSeeder):
+class SuperUserSeeder(BaseSeeder):
     @property
     def seeder_name(self):
         return 'SuperUserSeeder'
@@ -16,5 +15,6 @@ class Command(BaseSeeder):
                 first_name='Admin',
                 last_name='User'
             )
+            self.succes(f'Super User created')
         else:
-            raise Exception('Superuser already exists')
+            self.error(f'Super User already exists')
